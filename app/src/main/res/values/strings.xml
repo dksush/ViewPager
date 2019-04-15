@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">ViewPager</string>
+
+    <!-- LiveSing RoomEnterLoadingActivity -->
+    <string name="title_livesing_enter">LiveSing에 입장 중입니다.</string>
+
+    <!-- Live Fragment -->
+    <string name="live_actionbar_title">5G Live</string>
+    <string name="live_actionbar_subtitle">5G는 랩스타 서바이벌 오디션!</string>
+    <string name="live_actionbar_subtitle2">4명이서 동시에 즐기는 라이브싱</string>
+    <string name="live">Live</string>
+    <string name="battle">Battle</string>
+    <string name="make_live_room">Live방 만들기</string>
+</resources>

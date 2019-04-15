@@ -1,0 +1,201 @@
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity"
+    >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+
+        <!--상단바-->
+        <RelativeLayout
+            android:id="@+id/top"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@color/color02">
+
+            <TextView
+                android:id="@+id/txt_actionbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="16dp"
+                android:includeFontPadding="true"
+                android:text="@string/live_actionbar_title"
+                android:textColor="@color/color_222222"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+
+        <!--코디네이터 뷰-->
+        <android.support.design.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <android.support.design.widget.AppBarLayout
+                android:id="@+id/appbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+
+
+                <!--스크롤 플래그가 선언된 곳만 스크롤시 사라진다.-->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
+                    android:orientation="vertical"
+                    >
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        >
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:lineSpacingExtra="6dp"
+                            android:text="@string/live"
+                            android:textColor="@color/color_222222"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:lineSpacingExtra="6dp"
+                            android:text="@string/battle"
+                            android:textColor="@color/color_ff6f61"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_launcher_background"/>
+                </LinearLayout>
+                <!--스크롤 플래그가 선언된 곳만 스크롤시 사라진다. 끝-->
+
+
+
+                <RelativeLayout
+                    android:id="@+id/layout_tab"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:id="@+id/layout_live_sing_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:lineSpacingExtra="6dp"
+                            android:text="@string/live"
+                            android:textColor="@color/color_222222"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:lineSpacingExtra="6dp"
+                            android:text="sing"
+                            android:textColor="@color/color_24c6cc"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:id="@+id/layout_live_sing_subtitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/layout_live_sing_title"
+                        android:layout_marginStart="18dp"
+                        android:lineSpacingExtra="2dp"
+                        android:text="@string/live_actionbar_subtitle2"
+                        android:textColor="#333333"
+                        android:textSize="12dp" />
+
+
+                    <LinearLayout
+                        android:id="@+id/btn_make_room"
+                        android:layout_width="139dp"
+                        android:layout_height="42dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="14dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/kt_btn_mint_42_solid_selector"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="9dp"
+                            android:gravity="center_horizontal"
+                            android:lineSpacingExtra="1dp"
+                            android:text="@string/make_live_room"
+                            android:textColor="@color/color02"
+                            android:textSize="13dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+
+
+                    <!--툴바-->
+                    <android.support.design.widget.TabLayout
+                        android:id="@+id/tab_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_below="@+id/layout_live_sing_subtitle"
+                        android:layout_marginTop="2dp"
+                        android:background="@color/color02"
+                        app:tabMode="scrollable" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/color_dddddd" />
+                </RelativeLayout>
+
+            </android.support.design.widget.AppBarLayout>
+
+
+            <!--뷰페이저에 리사이클러뷰가 들어간다-->
+            <!--리사이러뷰의 스코롤 이벤트를 감지하는 behavior 를 선언.(리사 아니어도 선언)-->
+            <!--이 behavior를 등록해야 AppBarLayout가 스크롤을 감지해 AppBarLayout에 속한-->
+            <!--녀석들을 위로 올린다. 텝 레이아웃을 저 안에 넣은 이유는 behavior 를 한번만 선언하면 되는등-->
+            <!--여러 편의성이랄까. 밑에 선언해도 돌아가지만, 탭놈을 위로 스크롤할경우 AppBarLayout가 가 -->
+            <!--반응을 안할 수 있다. 반응을 줄려면 behavior 등록해 주어야 한다. 두번은 귀찮다.-->
+            <android.support.v4.view.ViewPager
+                android:id="@+id/viewpager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                />
+
+
+        </android.support.design.widget.CoordinatorLayout>
+
+
+
+
+
+    </LinearLayout>
+
+</layout>
